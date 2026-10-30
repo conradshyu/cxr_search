@@ -1,6 +1,7 @@
 # Similar CXR Image Search
 
 ## Synopsis
+
 This script search for similar CXR image based on radiomics features generated using the pyradiomics
 packages (https://pyradiomics.readthedocs.io/en/latest/). The research returns 15 images with the highest
 similarity. This script requires several libraries and modules such as `SimpleITK`, `scikit image`, and
@@ -10,12 +11,14 @@ algorithm is then to find the images with most similar radiomics features as a p
 with similar features.
 
 ## Requirements
+
 - `SimpleITK`: Insight Segmentation and Registration Toolkit (ITK)
 - `radiomics`: extraction of radiomics features from medical images
 - `keras`: Python interface for artificial neural networks
 - `skimage`: image processing modules for Python
 
 ## Usage
+
 ```
 cxr_search.py [-h] [--image IMAGE] --index INDEX [--max MAX] [--mask MASK] [--model MODEL]
 
@@ -35,6 +38,7 @@ trigger `keras` neural network and calculate the radiomics features of the image
 features are then compare with all the images in the index file.
 
 ## Example
+
 * Search with image in the index file:
 
 `cxr_search.py -i 2.25.65821805179691538693653550755504722887.png -x depot_lung.csv.gz -n 15`
@@ -63,4 +67,3 @@ The script will generate a list of 15 most similar (least difference) images:
 
 Note: The segmentation mask and neural network model are not required if the image is present in
 the index file.
-
